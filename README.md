@@ -20,6 +20,24 @@ This project demonstrates how to build an AI-powered chat bot using Gemini AI fr
 - PostgreSQL
 - Docker and Docker Compose (Optional)
 
+### Update Configurations in .env
+
+```
+APP_SECRET_KEY=app_secret_here
+JWT_SECRET_KEY=jwt_secret_here
+
+CORS_ORIGINS=http://localhost:5173,http://20.44.62.11:5173
+
+DATABASE_URI=postgresql://postgres:password@localhost:5432/postgres
+
+HOST=127.0.0.1
+PORT=5000
+
+GOOGLE_API_KEY=AIzaSyBqVVcd85PoRkGmojC4vTRBfwN4X-fnic9
+GEMINI_MODEL_NAME=gemini-pro
+
+```
+
 ### Installation
 
 #### Clone the repository
@@ -67,6 +85,8 @@ pip install -r requirements.txt
 python main.py
 
 ```
+
+The development server will be hosted on http://localhost:5000 by default.
 
 ### API Endpoints
 
