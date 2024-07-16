@@ -1,5 +1,6 @@
 import jsonpickle
 
+from exceptions import ChatNotFoundException
 from models.models import delete_objects
 from models.normal_chat_history import NormalChatHistory
 
@@ -17,6 +18,8 @@ class NormalAiChatter:
                 .filter_by(id=chat_id)
                 .first()
             )
+            if not normal_chat_history:
+                raise ChatNotFoundException()
             chat_history = jsonpickle.decode(normal_chat_history.chat_history)
         else:
             normal_chat_history = NormalChatHistory(

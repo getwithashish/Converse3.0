@@ -9,7 +9,7 @@ from messages import (
     CHAT_HISTORY_UNAVAILABLE,
     INVALID_PROMPT,
 )
-from converse_backend.service.normal_ai_chatter import NormalAiChatter
+from service.normal_ai_chatter import NormalAiChatter
 from utils.chat_response import ChatResponse
 
 
@@ -39,7 +39,7 @@ def NormalAiChatHistoryList():
     chat_list = normal_chatter.get_chat_history_list(user_id)
     status = 200
 
-    return CommonResponse(CHAT_HISTORY_LIST_RETRIEVED, status, chat_list)
+    return CommonResponse(CHAT_HISTORY_LIST_RETRIEVED, status, chat_list).format_response()
 
 
 @jwt_required()
@@ -51,10 +51,10 @@ def NormalAiChatHistory():
     chat_history = normal_chatter.get_chat_history(user_id, chat_id)
     if chat_history:
         status = 200
-        return CommonResponse(CHAT_HISTORY_RETRIEVED, status, chat_history)
+        return CommonResponse(CHAT_HISTORY_RETRIEVED, status, chat_history).format_response()
 
     status = 404
-    return CommonResponse(CHAT_HISTORY_UNAVAILABLE, status, None)
+    return CommonResponse(CHAT_HISTORY_UNAVAILABLE, status, None).format_response()
 
 
 @jwt_required()
