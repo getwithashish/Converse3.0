@@ -6,6 +6,7 @@ from models.models import db
 from utils.decouple_config_util import DecoupleConfigUtil
 from controllers.register import register
 from controllers.login import login
+from controllers.normal_ai_chat import NormalAiChat
 
 
 config = DecoupleConfigUtil.get_env_config()
@@ -32,6 +33,7 @@ with app.app_context():
 
 app.route("/register", methods=["POST"])(register)
 app.route("/login", methods=["POST"])(login)
+app.route("/chat_with_ai", methods=["POST"])(NormalAiChat)
 
 if __name__ == "__main__":
     app.run(debug=True, host=config("HOST"), port=config("PORT"))
