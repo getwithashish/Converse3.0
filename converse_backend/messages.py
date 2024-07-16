@@ -10,3 +10,6 @@ INVALID_PROMPT = "Provided prompt is invalid"
 CHAT_HISTORY_LIST_RETRIEVED = "Chat history list has been successfully retrieved"
 CHAT_HISTORY_RETRIEVED = "Chat history has been successfully retrieved"
 CHAT_HISTORY_UNAVAILABLE = "Chat history is not available"
+
+CHAT_RESPONSE_NOT_SAFE = "Chat response is not safe to be viewed publicly"
+CHAT_NOT_FOUND = "Chat not found. Please provide correct details"
