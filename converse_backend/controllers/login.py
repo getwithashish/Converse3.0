@@ -12,6 +12,6 @@ def login():
     user_login = UserLogin()
     response, status = user_login.login(username, password)
     if status != 200:
-        return CommonResponse(response, status)
+        return CommonResponse(response, status).format_response()
     else:
-        return LoginResponse(response, status)
+        return LoginResponse(response, status).format_response()
