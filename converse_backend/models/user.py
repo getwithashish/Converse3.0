@@ -1,4 +1,5 @@
 from models.models import db
+from models.document import Document
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -7,7 +8,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     password_hash = db.Column(db.String(256), nullable=False)
 
-    documents = db.relationship("Document", back_populates="user")
+    documents = db.relationship(Document, back_populates="user")
 
     def __repr__(self):
         return "<User %r>" % self.username
