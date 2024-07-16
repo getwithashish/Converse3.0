@@ -6,7 +6,12 @@ from models.models import db
 from utils.decouple_config_util import DecoupleConfigUtil
 from controllers.register import register
 from controllers.login import login
-from controllers.normal_ai_chat import NormalAiChat
+from controllers.normal_ai_chat import (
+    NormalAiChat,
+    NormalAiChatHistory,
+    NormalAiChatHistoryList,
+    deleteNormalAiChatHistory,
+)
 
 
 config = DecoupleConfigUtil.get_env_config()
@@ -33,7 +38,10 @@ with app.app_context():
 
 app.route("/register", methods=["POST"])(register)
 app.route("/login", methods=["POST"])(login)
-app.route("/chat_with_ai", methods=["POST"])(NormalAiChat)
+app.route("/normal_chat_with_ai", methods=["POST"])(NormalAiChat)
+app.route("/normal_chat_history_list", methods=["GET"])(NormalAiChatHistoryList)
+app.route("/normal_chat_history", methods=["GET"])(NormalAiChatHistory)
+app.route("/normal_chat_history_list", methods=["DELETE"])(deleteNormalAiChatHistory)
 
 if __name__ == "__main__":
     app.run(debug=True, host=config("HOST"), port=config("PORT"))
