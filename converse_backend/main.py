@@ -60,4 +60,4 @@ def handle_chat_not_found_exception(error):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host=config("HOST"), port=config("PORT"))
+    app.run(host=config("HOST"), port=config("PORT"))
