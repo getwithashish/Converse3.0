@@ -60,7 +60,7 @@ services:
     image: converse-prod-frontend-image
     build: ./converse_frontend/Dockerfile.prod
     ports:
-      - 5173:5173
+      - 4173:4173
     restart: always
     depends_on:
       - converse-backend-prod-service
