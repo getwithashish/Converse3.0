@@ -26,22 +26,28 @@ This project demonstrates how to build an AI-powered chat bot using Gemini AI fr
 - [Contribution](#contribution)
 
 ## GIFs and Screenshots
+
 ![Converse-Website](demo/Website.gif)
+
 ### Landing Page
+
 ![Landing Page](demo/LandingPage.gif)
 
 ### Registration Page
+
 ![Registration Page](demo/RegistrationPage.gif)
 
 ### Login Page
+
 ![Login Page](demo/LoginPage.gif)
 
 ### Homepage
+
 ![Homepage](demo/HomePage.gif)
 
 ### Normal AI Chat Page
-![Normal AI Chat Page](demo/NormalChatWithAIPage.png)
 
+![Normal AI Chat Page](demo/NormalChatWithAIPage.png)
 
 ## Setup
 
@@ -162,7 +168,7 @@ python main.py
 
 ```
 
-The development server will be hosted on http://localhost:5000 by default.
+The development server will be hosted on http://localhost:8000 by default.
 
 ## API Endpoints
 
