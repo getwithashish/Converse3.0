@@ -15,6 +15,7 @@ This project demonstrates how to build an AI-powered chat bot using Gemini AI fr
 ## Table of Contents
 
 - [GIFs and Screenshots](#gifs-and-screenshots)
+- [Project Structure](#project-structure)
 - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Update Configurations in .env](#update-configurations-in-env)
@@ -48,6 +49,51 @@ This project demonstrates how to build an AI-powered chat bot using Gemini AI fr
 ### Normal AI Chat Page
 
 ![Normal AI Chat Page](demo/NormalChatWithAIPage.png)
+
+## Project Structure
+
+```
+├── converse_backend
+│   ├── client
+│   │   └── ai_models
+│   │   └── gemini
+│   ├── controllers
+│   ├── models
+│   ├── service
+│   └── utils
+├── converse_frontend
+│   ├── public
+│   └── src
+│   ├── assets
+│   ├── components
+│   │   ├── chatResponse
+│   │   ├── landingpage
+│   │   ├── layout
+│   │   ├── shared
+│   │   │   └── navBar
+│   │   ├── ui
+│   │   └── username
+│   ├── pages
+│   │   ├── auth
+│   │   │   ├── register
+│   │   │   │   └── components
+│   │   │   └── signin
+│   │   │   └── components
+│   │   ├── converseChat
+│   │   ├── converseChatDb
+│   │   │   └── components
+│   │   ├── converseChatDoc
+│   │   │   └── components
+│   │   ├── dashboard
+│   │   │   └── components
+│   │   └── landing-page
+│   │   └── components
+│   ├── providers
+│   ├── routes
+│   │   └── hooks
+│   └── types
+└── demo
+```
 
 ## Setup
 
