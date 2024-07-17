@@ -164,7 +164,7 @@ docker compose --profile prod up
 
 > Note: Add the configurations in `.prod.env` for running the backend
 
-> Note: For production, use production-grade servers like nginx to serve the frontend
+> Note: For production, use production-grade servers like nginx to serve the application
 
 ### Installation
 
@@ -245,6 +245,8 @@ The development server will be hosted on http://localhost:8000 by default.
 
 **Response Body**:
 
+**201 CREATED**
+
 ```json
 {
   "message": "User has been successfully registered"
@@ -265,6 +267,8 @@ The development server will be hosted on http://localhost:8000 by default.
 ```
 
 **Response Body**:
+
+**200 OK**
 
 ```json
 {
@@ -291,6 +295,8 @@ Authorization: Bearer your_jwt_token_here
 ```
 
 **Response Body**:
+
+**200 OK**
 
 ```json
 {
