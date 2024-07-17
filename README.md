@@ -218,12 +218,181 @@ The development server will be hosted on http://localhost:8000 by default.
 
 ## API Endpoints
 
-- POST `/register` - Register a new user.
-- POST `/login` - Authenticate and obtain JWT token.
-- POST `/normal_chat_with_ai` - Chat with the AI using Gemini model.
-- GET `/normal_chat_history_list` - Retrieve list of chat history.
-- GET `/normal_chat_history?chat_id=<chat_id>` - Retrieve chat history by ID.
-- DELETE `/normal_chat_history_list?chat_id=<chat_id>` - Delete chat history by ID.
+| Endpoint                                      | Method | Description                         |
+| --------------------------------------------- | ------ | ----------------------------------- |
+| `/register`                                   | POST   | Register a new user                 |
+| `/login`                                      | POST   | Authenticate and obtain JWT token   |
+| `/normal_chat_with_ai`                        | POST   | Chat with the AI using Gemini model |
+| `/normal_chat_history_list`                   | GET    | Retrieve list of chat history       |
+| `/normal_chat_history?chat_id=<chat_id>`      | GET    | Retrieve chat history by ID         |
+| `/normal_chat_history_list?chat_id=<chat_id>` | DELETE | Delete chat history by ID           |
+| `/normal_chat_history_list`                   | DELETE | Delete all the chats of that user   |
+
+### Detailed Endpoint Descriptions
+
+#### POST `/register`
+
+**Description**: Register a new user.
+
+**Request Body**:
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+**Response Body**:
+
+```json
+{
+  "message": "User has been successfully registered"
+}
+```
+
+#### POST `/login`
+
+**Description**: Authenticate and obtain JWT token.
+
+**Request Body**:
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+**Response Body**:
+
+```json
+{
+  "access_token": "jwt_token_here"
+}
+```
+
+#### POST `/normal_chat_with_ai`
+
+**Description**: Chat with the AI using Gemini model.
+
+**Request Body**:
+
+```json
+{
+  "message": "string"
+}
+```
+
+**Auth Headers**:
+
+```
+Authorization: Bearer your_jwt_token_here
+```
+
+**Response Body**:
+
+```json
+{
+  "ai_response": "response_here",
+  "chat_id": "chat_id_here"
+}
+```
+
+#### GET `/normal_chat_history_list`
+
+**Description**: Retrieve list of chat history.
+
+**Auth Headers**:
+
+```
+Authorization: Bearer your_jwt_token_here
+```
+
+**Response Body**:
+
+**200 OK**
+
+```json
+{
+  "data": [
+    {
+      "chat_id": "chat_id_here",
+      "chat_name": "chat_name_here"
+    }
+  ],
+  "message": "Chat history list has been successfully retrieved"
+}
+```
+
+#### GET `/normal_chat_history?chat_id=<chat_id>`
+
+**Description**: Retrieve chat history by ID.
+
+**Auth Headers**:
+
+```
+Authorization: Bearer your_jwt_token_here
+```
+
+**Response Body**:
+
+**200 OK**
+
+```json
+{
+  "data": {
+    "chat_history": [
+      {
+        "role": "user",
+        "text": "promp1_here"
+      },
+      {
+        "role": "model",
+        "text": "response1_here"
+      },
+      {
+        "role": "user",
+        "text": "prompt2_here"
+      },
+      {
+        "role": "model",
+        "text": "response2_here"
+      }
+    ],
+    "chat_id": "34"
+  },
+  "message": "Chat history has been successfully retrieved"
+}
+```
+
+#### DELETE `/normal_chat_history_list?chat_id=<chat_id>`
+
+**Description**: Delete chat history by ID.
+
+**Auth Headers**:
+
+```
+Authorization: Bearer your_jwt_token_here
+```
+
+**Response Body**:
+
+**204 NO CONTENT**
+
+#### DELETE `/normal_chat_history_list`
+
+**Description**: Delete all the chats.
+
+**Auth Headers**:
+
+```
+Authorization: Bearer your_jwt_token_here
+```
+
+**Response Body**:
+
+**204 NO CONTENT**
 
 ## Credits
 
