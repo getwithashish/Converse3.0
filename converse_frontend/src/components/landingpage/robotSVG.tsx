@@ -2,8 +2,6 @@ import * as React from "react"
 import { SVGProps } from "react"
 export const Robot = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    // width={678}
-    // height={635}
     viewBox="-650 0 500 800"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,6 @@
 import { SVGProps } from "react"
 export const BackGround = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    // width={1980}
-    // height={1080}
     viewBox="0 0 1980 1200"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

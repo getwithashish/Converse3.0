@@ -21,64 +21,6 @@ const AnimatedGradientText = styled.h1`
   color: transparent;
 `;
 
-// function useParallax(value: MotionValue<number>, distance: number) {
-//   return useTransform(value, [0, 1], [-distance, distance]);
-// }
-
-// function Image({ id }: { id: number }) {
-//   const ref = useRef(null);
-//   const { scrollYProgress } = useScroll({ target: ref });
-//   const y = useParallax(scrollYProgress, 300);
-
-//   let title, link, description;
-//   if (id === 1) {
-//     title = 'CONVERSE';
-//     link = '/chat';
-//     description =
-//       'An interactive, AI-driven virtual assistant, ready to assist you at any time. Designed to provide personalized support and information, our chatbot is your go-to resource for questions, assistance, or exploration. Engage in natural conversation, ask anything you need, and receive instant responses. Enhancing user experience, our chatbot is accessible 24/7, offering seamless assistance right at your fingertips.';
-//   } else if (id === 2) {
-//     title = 'CONVERSE-DOCUMENT';
-//     link = '/chat_with_doc';
-//     description =
-//       ' Converse is capable of reading and answering queries based on the content of uploaded documents. With intuitive user interaction and advanced document understanding, Converse can efficiently retrieves relevant information, enhancing the user experience.';
-//   } else if (id === 3) {
-//     title = 'CONVERSE-DATABASE';
-//     link = '/chat_with_db';
-//     description =
-//       'Converse extends its capabilities to database content, enabling seamless querying and retrieval of information. With its intuitive interface and advanced data processing, Converse efficiently accesses and responds to user queries, enhancing the accessibility and usability of the application.';
-//   }
-
-//   return (
-//     <>
-//       <section className="flex">
-//         <div
-//           ref={ref}
-//           className="flex items-center justify-center duration-300 ease-in-out hover:scale-105"
-//         >
-//           <img src={`../../../public/${id}.png`} />
-//         </div>
-//         <motion.div className="text-xl" style={{ y }}>
-//           <Link to={link}>
-//             <div className="w-full rounded-lg bg-white shadow dark:border-gray-700 dark:bg-gray-950">
-//               <div className="w-full">
-//                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white md:text-2xl lg:text-3xl">
-//                   <AnimatedGradientText>{title}</AnimatedGradientText>
-//                 </h5>
-//                 <p className="lg:text-md text-xs font-normal text-gray-700 dark:text-white md:text-sm">
-//                   {description}
-//                 </p>
-//                 <span className="lg:text-md text-xs transition md:text-sm ">
-//                   <AnimatedGradientText>Click here!</AnimatedGradientText>
-//                 </span>
-//               </div>
-//             </div>
-//           </Link>
-//         </motion.div>
-//       </section>
-//     </>
-//   );
-// }
-
 const BackgroundContainer = styled.div`
   position: absolute;
   top: 0;
@@ -113,12 +55,6 @@ export const Dashboard = () => {
     }
   }, []);
 
-  // const { scrollYProgress } = useScroll();
-  // const scaleX = useSpring(scrollYProgress, {
-  //   stiffness: 200,
-  //   damping: 50,
-  //   restDelta: 0.1
-  // });
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -270,7 +206,7 @@ export const Dashboard = () => {
                       <div className="flex items-center rounded-lg">
                         <img
                           className="rounded-t-lg transition duration-300 ease-in-out hover:scale-105"
-                          src="../../../public/1.png"
+                          src="1.png"
                           alt="Converse Image"
                         />
                         <div className="flex-1 items-end justify-end p-5 text-center lg:text-left">
@@ -307,7 +243,7 @@ export const Dashboard = () => {
                       <div className="flex items-center rounded-lg">
                         <img
                           className="rounded-t-lg transition duration-300 ease-in-out hover:scale-105"
-                          src="../../../public/2.png"
+                          src="2.png"
                         />
                         <div className="flex-1 items-end justify-end p-5 text-center lg:text-left">
                           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-xl lg:text-2xl">
@@ -343,7 +279,7 @@ export const Dashboard = () => {
                       <div className="flex items-center rounded-lg">
                         <img
                           className="rounded-t-lg transition duration-300 ease-in-out hover:scale-105 "
-                          src="../../../public/3.png"
+                          src="3.png"
                         />
                         <div className="flex-1 items-end justify-end p-5 text-center lg:text-left">
                           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-xl lg:text-2xl">
